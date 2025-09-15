@@ -88,7 +88,7 @@ const Footer = () => {
               <div className="space-y-4">
                 <div className="flex items-start">
                   <Icon name="MapPin" size={16} className="text-emerald-500 mt-1 mr-3 flex-shrink-0" />
-                  <span className="text-gray-400">San Francisco, CA</span>
+                  <span className="text-gray-400">Lagos, Nigeria </span>
                 </div>
                 <div className="flex items-start">
                   <Icon name="Mail" size={16} className="text-emerald-500 mt-1 mr-3 flex-shrink-0" />
