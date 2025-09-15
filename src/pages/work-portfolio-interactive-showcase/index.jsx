@@ -836,15 +836,15 @@ const WorkPortfolioShowcase = () => {
         <div className="container-brand">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
+            <div className="text-center mb-8 md:mb-16">
+                <div className="inline-flex items-center px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
                 <Icon name="Briefcase" size={16} className="mr-2" />
                 Professional Journey
               </div>
-              <h2 className="text-4xl font-bold font-display mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 md:mb-6">
                 <span className="text-gradient">Career</span> Milestones
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4 md:px-0">
                 A timeline of my career progression and major accomplishments in the geo-spatial industry
               </p>
             </div>
@@ -852,9 +852,9 @@ const WorkPortfolioShowcase = () => {
             {/* Timeline */}
             <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-secondary to-primary transform md:-translate-x-0.5"></div>
+            <div className="hidden md:block absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-secondary to-primary transform md:-translate-x-0.5"></div>
 
-              <div className="space-y-12">
+               <div className="space-y-8 md:space-y-12">
                 {timelineData.map((item, index) => (
                   <div
                     key={item.id}
@@ -864,21 +864,21 @@ const WorkPortfolioShowcase = () => {
                     onClick={() => setActiveItem(activeItem === index ? -1 : index)}
                   >
                     {/* Timeline Node */}
-                    <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-background border-4 border-accent rounded-full transform md:-translate-x-1/2 z-10"></div>
+                  <div className="absolute left-1/2 -translate-x-1/2 md:left-1/2 w-4 h-4 bg-background border-4 border-accent rounded-full transform md:-translate-x-1/2 z-10"></div>
                     
                     {/* Year Badge */}
-                    <div className="absolute left-16 md:left-1/2 top-0 transform md:-translate-x-1/2 md:-translate-y-8">
-                      <div className="bg-gradient-brand text-white px-3 py-1 rounded-full text-sm font-bold shadow-brand">
+                      <div className="absolute left-1/2 -translate-x-1/2 md:left-1/2 top-0 transform md:-translate-x-1/2 md:-translate-y-8">
+                      <div className="bg-gradient-brand text-white px-3 py-1 rounded-full text-sm font-bold shadow-brand whitespace-nowrap">
                         {item.year}
                       </div>
                     </div>
 
                     {/* Content Card */}
-                    <div className={`ml-20 md:ml-0 w-full md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
-                      <div className={`card-brand p-6 hover:shadow-brand-lg transition-brand ${
-                        activeItem === index ? 'ring-2 ring-accent shadow-brand-lg' : ''
-                      }`}>
-                        <div className="flex items-start space-x-4">
+                          <div className={`mt-6 md:mt-0 w-full md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
+                       <div className={`card-brand p-4 md:p-6 hover:shadow-brand-lg transition-brand ${
+                      activeItem === index ? 'ring-2 ring-accent shadow-brand-lg' : ''
+                    }`}>
+                        <div className="flex items-start space-x-3 md:space-x-4">
                           <div className="flex-shrink-0">
                             <div className="w-12 h-12 bg-gradient-brand rounded-xl flex items-center justify-center text-white shadow-brand">
                               <Icon name={item.icon} size={20} />
