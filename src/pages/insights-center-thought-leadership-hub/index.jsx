@@ -261,7 +261,7 @@ const InsightsCenterThoughtLeadershipHub = () => {
       <Helmet>
         <title>Insights Center - Geo-spatial Expertise & Thought Leadership | Joseph Aro</title>
         <meta name="description" content="Explore geo-spatial insights, urban planning strategies, environmental assessments, and risk management approaches from Joseph Aro. Join the community and stay informed about industry developments." />
-        <meta name="keywords" content="geo-spatial insights, urban planning, environmental assessment, risk management, geostatistical analysis, thought leadership, GIS community" />
+        <meta name="keywords" content="geo-spatial insights, urban planning, environmental assessment, risk management, geo-statistical analysis, thought leadership, GIS community" />
       </Helmet>
       <Header />
       <main className="pt-20">
@@ -356,7 +356,7 @@ const InsightsCenterThoughtLeadershipHub = () => {
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Let's collaborate on your next project and leverage geo-spatial expertise to solve complex challenges in urban planning, environmental management, and risk assessment.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 variant="default"
                 iconName="ArrowRight" 
@@ -372,10 +372,20 @@ const InsightsCenterThoughtLeadershipHub = () => {
               >
                 Schedule Consultation
               </Button>
-            </div>
+            </div> */}
           </div>
         </section>
       </main>
+
+      <footer className="bg-primary text-white section-padding">
+        <div className="container-brand">
+          <div className="text-center">
+            <p className="text-sm opacity-80">
+              © {new Date()?.getFullYear()} Joseph Aro. All rights reserved. Crafted with passion and precision.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
-import Button from '../../../components/ui/Button';
+// import Button from '../../../components/ui/Button';
 
 const ServicesPreview = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,7 +15,7 @@ const ServicesPreview = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 } // Reduced threshold for better mobile detection
     );
 
     if (sectionRef?.current) {
@@ -66,32 +66,33 @@ const ServicesPreview = () => {
 
   return (
     <section ref={sectionRef} className="section-padding relative overflow-hidden bg-black/5">
-      <div className="container-brand">
+      {/* Replaced container-brand with standard container classes */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className={`text-center mb-16 transition-brand duration-1000 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full mb-6">
+        <div className={`text-center mb-8 md:mb-16 transition-brand duration-1000 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
+          <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full mb-4 md:mb-6">
             <Icon name="Navigation" size={16} className="text-primary mr-2" />
             <span className="text-sm font-medium text-primary">Geo-Spatial Services</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 font-display">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 font-display">
             Comprehensive Geospatial
             <span className="text-gradient block">Solutions</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-balance px-4">
             With footprints in virtually all verticals in the environmental sector, I bring a bird's eye view to your projects, seeing stories in data and solutions in every problem.
           </p>
           
           {/* Quote section */}
-          <div className="mt-12 p-6 bg-muted/50 rounded-2xl max-w-2xl mx-auto">
-            <blockquote className="text-lg italic text-center text-foreground/90 mb-4">
+          <div className="mt-8 md:mt-12 p-4 md:p-6 bg-muted/50 rounded-2xl max-w-2xl mx-auto">
+            <blockquote className="text-base md:text-lg italic text-center text-foreground/90 mb-2 md:mb-4">
               "Life begins when fear ends"
             </blockquote>
-            <p className="text-center text-muted-foreground">Anonymous</p>
+            <p className="text-center text-muted-foreground text-sm md:text-base">Anonymous</p>
           </div>
         </div>
 
         {/* Services Grid - Fixed responsive classes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
           {services?.map((service, index) => (
             <div
               key={service?.id}
@@ -105,7 +106,7 @@ const ServicesPreview = () => {
                 hoveredService === service?.id ? 'transform -translate-y-2' : ''
               }`}>
                 {/* Service image header */}
-                <div className="h-48 overflow-hidden relative">
+                <div className="h-40 sm:h-48 overflow-hidden relative">
                   <img 
                     src={service.image} 
                     alt={service.title} 
@@ -113,25 +114,25 @@ const ServicesPreview = () => {
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent opacity-60`}></div>
                   <div className="absolute bottom-4 left-4">
-                    <div className={`w-12 h-12 bg-background/90 rounded-xl flex items-center justify-center mb-2 transition-brand group-hover:scale-110`}>
-                      <Icon name={service?.icon} size={24} className={service?.iconColor} />
+                    <div className={`w-10 h-10 md:w-12 md:h-12 bg-background/90 rounded-xl flex items-center justify-center mb-2 transition-brand group-hover:scale-110`}>
+                      <Icon name={service?.icon} size={20} className={service?.iconColor} />
                     </div>
-                    <h3 className="text-xl font-bold text-background font-display">{service?.title}</h3>
+                    <h3 className="text-lg md:text-xl font-bold text-background font-display">{service?.title}</h3>
                     <p className="text-xs font-bold text-background uppercase tracking-wide">{service?.subtitle}</p>
                   </div>
                 </div>
 
-                <div className="p-6">
+                <div className="p-4 md:p-6">
                   {/* Description */}
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-muted-foreground mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                     {service?.description}
                   </p>
 
                   {/* Features List */}
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
                     {service?.features?.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm">
-                        <div className="w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0"></div>
+                      <li key={featureIndex} className="flex items-center text-xs md:text-sm">
+                        <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-accent rounded-full mr-2 md:mr-3 flex-shrink-0"></div>
                         <span className="text-muted-foreground">{feature}</span>
                       </li>
                     ))}
@@ -144,16 +145,16 @@ const ServicesPreview = () => {
 
         {/* Process Overview */}
         <div className={`transition-brand duration-1000 delay-600 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
-          <div className="bg-muted/30 rounded-2xl p-8 lg:p-12">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-foreground mb-4 font-display">My Geospatial Process</h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="bg-muted/30 rounded-2xl p-6 md:p-8 lg:p-12">
+            <div className="text-center mb-8 md:mb-12">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3 md:mb-4 font-display">My Geospatial Process</h3>
+              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
                 A proven methodology that ensures every project delivers exceptional results through spatial thinking and technical excellence.
               </p>
             </div>
 
             {/* Fixed responsive classes for process steps */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {[
                 { step: "01", title: "Discover", description: "Understanding your spatial challenges, data requirements, and project objectives through comprehensive consultation." },
                 { step: "02", title: "Analyze", description: "Processing and examining geospatial data to extract meaningful patterns, relationships, and insights." },
@@ -161,21 +162,21 @@ const ServicesPreview = () => {
                 { step: "04", title: "Implement", description: "Delivering actionable solutions with ongoing support, monitoring, and measurable impact assessment." }
               ]?.map((phase, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-gradient-brand rounded-full flex items-center justify-center mx-auto mb-4 shadow-brand">
-                    <span className="text-white font-bold text-lg">{phase?.step}</span>
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-brand rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-brand">
+                    <span className="text-white font-bold text-sm md:text-lg">{phase?.step}</span>
                   </div>
-                  <h4 className="text-xl font-semibold text-foreground mb-3">{phase?.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{phase?.description}</p>
+                  <h4 className="text-lg md:text-xl font-semibold text-foreground mb-2 md:mb-3">{phase?.title}</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{phase?.description}</p>
                 </div>
               ))}
             </div>
             
             {/* Personal signature */}
-            <div className="mt-16 p-6 bg-black rounded-xl max-w-md mx-auto text-center">
-              <p className="text-white font-medium mb-2 text-2xl">
+            <div className="mt-12 md:mt-16 p-4 md:p-6 bg-black rounded-xl max-w-md mx-auto text-center">
+              <p className="text-white font-medium mb-2 text-xl md:text-2xl">
                 <span className="font-semibold">Joseph</span> - Seeing solutions in every problem
               </p>
-              <p className="text-x text-white font-bold">
+              <p className="text-sm md:text-base text-white font-bold">
                 With a coat of many colors and expertise across environmental sectors
               </p>
             </div>

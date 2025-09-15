@@ -1,6 +1,6 @@
 {
-  "short_name": "joseph-aro-portfolio",
-  "name": "joseph-aro-portfolio",
+  "short_name": "joseph-aro",
+  "name": "joseph-aro",
   "icons": [
     {
       "src": "favicon.ico",
@@ -13,3 +13,4 @@
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
+// git add commit -m "mobile responsiveness and SEO improvements"

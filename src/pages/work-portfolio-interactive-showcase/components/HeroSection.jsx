@@ -1,16 +1,17 @@
 import React from 'react';
 import Icon from '../../../components/AppIcon';
 // import Button from '../../../components/ui/Button';
+// import heroBackground from 'assets/images/hero-background.jpg';
 
 const HeroSection = ({ onScrollToProjects }) => {
   return (
     <section className="relative bg-gradient-to-br from-background via-muted/30 to-background py-20 lg:py-32 overflow-hidden">
-      style={{
-        backgroundImage: `linear-gradient(rgba(33, 150, 243, 0.1), rgba(76, 175, 80, 0.1)), url(${heroBackground})`,
+      {/* style={{
+        backgroundImage: `linear-gradient(rgba(33, 150, 243, 0.1), rgba(76, 175, 80, 0.1)), `,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
-      }}
+      }} */}
     
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-noise opacity-40"></div>

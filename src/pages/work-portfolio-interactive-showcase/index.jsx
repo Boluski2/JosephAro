@@ -945,7 +945,7 @@ const WorkPortfolioShowcase = () => {
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">Lagos Waterways Geoportal</h3>
               <p className="text-muted-foreground mb-4 text-sm">
-                Developed comprehensive geoinformation portal for Lagos waterways authority with real-time monitoring capabilities.
+                Developed comprehensive geo-information portal for Lagos waterways authority with real-time monitoring capabilities.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-primary/10 text-primary">GIS</span>

@@ -13,7 +13,7 @@ const HeroSection = () => {
     setIsVisible(true);
     const interval = setInterval(() => {
       setCurrentWord((prev) => (prev + 1) % rotatingWords.length);
-    }, 3000);
+    }, 1500);
     return () => clearInterval(interval);
   }, [rotatingWords.length]);
 
@@ -41,12 +41,12 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-noise opacity-10"></div>
       
       <div className="container-brand relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-6xl mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-8xl mx-auto px-4">
           {/* Text content on the left */}
           <div className="w-full md:w-3/5 text-left flex flex-col justify-center">
             {/* Main Heading */}
             <div className={`transition-brand duration-1000 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
-              <h1 className="text-4xl md:text-8xl font-bold mb-3 text-gray-200">
+              <h1 className="text-4xl md:text-8xl font-bold mb-3 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
                 Joseph Aro
               </h1>
               
@@ -55,7 +55,7 @@ const HeroSection = () => {
                 <div className="relative w-full">
                   <span 
                     key={currentWord}
-                    className="absolute left-0 text-3xl md:text-4xl font-medium text-white animate-fade-in whitespace-nowrap"
+                    className="absolute left-0 text-3xl md:text-4xl font-medium bg-gradient-to-r from-pink-400 to-yellow-300 bg-clip-text text-transparent animate-fade-in whitespace-nowrap"
                   >
                     {rotatingWords[currentWord]}
                   </span>
@@ -65,7 +65,7 @@ const HeroSection = () => {
 
             {/* Description text */}
             <div className={`mb-8 transition-brand duration-1000 delay-300 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
-              <p className="text-lg text-gray-200 max-w-md">
+              <p className="text-lg bg-gradient-to-r from-green-300 to-blue-400 bg-clip-text text-transparent font-medium max-w-md">
                 The Spatial Path of a Creative Architect
               </p>
             </div>
@@ -88,18 +88,22 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Image on the right - using img tag with increased size */}
+          {/* Image on the right - standalone with proper dimensions */}
           <div className="w-full md:w-2/5 flex justify-center mt-8 md:mt-0">
             <div className={`transition-brand duration-1000 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
               <div className="relative">
-                {/* Profile image using img tag with increased size */}
-                <div className="w-96 h-96 flex items-center justify-center overflow-hidden shadow-lg rounded-2xl border-2 border-white/20 bg-gradient-to-br from-blue-500/10 to-purple-500/10">
+                {/* Profile image with proper dimensions and standalone styling */}
+                <div className="relative overflow-hidden rounded-2xl shadow-brand-lg">
                   <img 
                     src='/image/jor.png'
                     alt="Joseph Aro" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-[600px] object-cover"
                   />
                 </div>
+                
+                {/* Decorative elements to enhance the standalone look
+                <div className="absolute -top-4 -left-4 w-24 h-24 rounded-full bg-cyan-400/30 blur-xl -z-10"></div>
+                <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-purple-500/30 blur-xl -z-10"></div> */}
               </div>
             </div>
           </div>
