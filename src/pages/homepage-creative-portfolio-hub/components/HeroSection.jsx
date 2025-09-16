@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../../../components/ui/Button';
 import heroBackground from '/assets/images/hero-background.jpg';
+import { motion } from 'motion/react';
 
 const HeroSection = () => {
   const [currentWord, setCurrentWord] = useState(0);
@@ -89,6 +90,7 @@ const HeroSection = () => {
           </div>
           
           {/* Image on the right - standalone with proper dimensions */}
+          
           <div className="w-full md:w-2/5 flex justify-center mt-8 md:mt-0">
             <div className={`transition-brand duration-1000 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
               <div className="relative">

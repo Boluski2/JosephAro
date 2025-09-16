@@ -1,5 +1,5 @@
 {
-  "name": "joseph-aro-portfolio",
+  "name": "joseph-aro",
   "version": "0.1.0",
   "private": true,
   "rocketCritical": {
@@ -42,6 +42,8 @@
     "dotenv": "^16.0.1",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.484.0",
+    "motion": "^12.23.12",
+    "motion-v": "^1.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",

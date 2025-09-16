@@ -9,12 +9,12 @@ import CTASection from './components/CTASection';
 const AboutExperiencePage = () => {
   useEffect(() => {
     // Set page title
-    document.title = "About Joseph Aro - Creative Architect & Design Strategist";
+    document.title = "About Joseph Aro - The Spatial Path of a Creative Architect";
     
     // Set meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription?.setAttribute('content', 'Discover the story behind Joseph Aro, Creative Architect specializing in strategic design, brand transformation, and digital experiences that drive results.');
+      metaDescription?.setAttribute('content', 'Discover the story behind Joseph Aro, The Spatial Path of a Creative Architect');
     }
 
     // Scroll to top on page load
